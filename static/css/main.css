@@ -1,3 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Oswald:200,300,400,500,600,700&display=swap&subset=cyrillic");
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #353b43;
+  color: #737f8a;
+}
+body a {
+  color: white !important;
+  transition: all 0.2s ease-in-out;
+}
+body a:hover {
+  color: #57cbcc !important;
+}
 
+.font-oswald-3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+
+.link_top a {
+  border: 1px solid transparent;
+  margin: 1px 3px;
+  display: flex;
+  text-decoration: none;
+}
+.link_top a:hover {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.47);
+}
+.link_top .myicon {
+  display: inline-block;
+  background: url("../img/ico.png") no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+  background-size: 40px;
+}
+.link_top .myicon.githab {
+  background-position: 0px 0px;
+  width: 20px;
+  height: 20px;
+}
+.link_top .myicon.linkedin {
+  background-position: -20px 0px;
+  width: 20px;
+  height: 20px;
+}
+.link_top .myicon.nucleus {
+  background-position: 0px -64px;
+  width: 20px;
+  height: 20px;
+}
+.link_top .myicon.youtube {
+  background-position: 0px -40px;
+  width: 20px;
+  height: 20px;
+}
+.link_top .myicon.telegram {
+  background-position: -20px -21px;
+  width: 20px;
+  height: 20px;
+}
+.link_top .myicon.habr {
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  background: none;
+  text-indent: 0;
+}
+.link_top .myicon.habr:hover {
+  color: white;
+}
+
+.navbartop {
+  background-color: #1d2024 !important;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+.navbartop #navbartop {
+  font-size: 1.5rem;
+}
+.navbartop #navbartop a {
+  color: #737f8a !important;
+  padding: 1rem 1rem 1.3rem 1rem;
+}
+.navbartop #navbartop a:hover {
+  color: #57cbcc !important;
+}
+.navbartop #navbartop .active a {
+  color: #57cbcc !important;
+}
+.navbartop .dropdown-menu {
+  background-color: #1d2024 !important;
+  font-size: 1.5rem;
+}
+.navbartop .dropdown-menu .dropdown-item {
+  font-weight: 300;
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,1 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Oswald:200,300,400,500,600,700&display=swap&subset=cyrillic');
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
+
+$font-opensans: 'Open Sans', sans-serif;
+$font-an: 'Amatic SC', cursive;
+$font-oswald: 'Oswald', sans-serif;
+$transition-base: all .2s ease-in-out !default;
+
+
+body {
+  font-family: $font-opensans;
+  background: #353b43;
+  color: #737f8a;
+
+  a {
+    color: white !important;
+    transition: $transition-base;
+
+    &:hover {
+      color: #57cbcc !important;
+    }
+  }
+}
+
+.font-oswald-3 {
+  font-family: $font-oswald;
+  font-weight: 300;
+}
+
+.link_top {
+  a {
+    border: 1px solid transparent;
+    margin: 1px 3px;
+    display: flex;
+    text-decoration: none;
+
+
+    &:hover {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.47);
+    }
+  }
+
+  .myicon {
+    display: inline-block;
+    background: url('../img/ico.png') no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+    background-size: 40px;
+
+
+    &.githab {
+      background-position: -0px -0px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.linkedin {
+      background-position: -20px 0px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.nucleus {
+      background-position: -0px -64px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.youtube {
+      background-position: 0px -40px;
+      width: 20px;
+      height: 20px;;
+    }
+
+    &.telegram {
+      background-position: -20px -21px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.habr {
+      font-weight: 900;
+      font-family: $font-oswald;
+      background: none;
+      text-indent: 0;
+
+      &:hover {
+        color: white;
+
+      }
+    }
+  }
+}
+
+.navbartop {
+  background-color: #1d2024 !important;
+  font-family: $font-oswald;
+  font-weight: 300;
+
+  #navbartop {
+    font-size: 1.5rem;
+
+
+    a {
+      color: #737f8a !important;
+      padding: 1rem 1rem 1.3rem 1rem;
+
+      &:hover {
+        color: #57cbcc !important;
+      }
+
+
+    }
+
+    .active {
+      a {
+        color: #57cbcc !important;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    background-color: #1d2024 !important;
+    font-size: 1.5rem;
+
+    .dropdown-item {
+      font-weight: 300;
+    }
+
+
+  }
+}
