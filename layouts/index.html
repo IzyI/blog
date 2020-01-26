@@ -1,16 +1,38 @@
 {{ define "title" }}{{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-<div>HOUMEPAGE</div>
-<div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
+{{range .Site.Params.count}}
+            <div class="card bg-olddark block-article mb-5">
+                <div class="card-body">
+                    <h2 class="card-title font-oswald"><a href="#" class="color-text">Структура Css и всякие всяки всякие штуки дрюуи и остальная
+                        сутеа чайхана и
+                        т д и тп </a> </h2>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+
+                    <div class="card-subtitle">
+                        Тэги:
+                        <a class="badge badge-my">Python</a>
+                        <a class="badge badge-my">web</a>
+                        <a class="badge badge-my">tcp</a>
+                        <a class="badge  badge-my">aiohttp</a>
+                    </div>
+                    <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content. Some quick example text to build on the card title and make up the bulk of the
+                        card's content. Some quick example text to build on the card title and make up the bulk of the
+                        card's content. Some quick example text to build on the card title and make up the bulk of the
+                        card's content. Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="card-subtitle">
+                            <small class="text-muted">
+                                Автор: Di<br>
+                                Дата: 29.03.2020<br>
+                                <a href="" class="a-revers">ТОПИК на Хабре</a>
+                            </small></div>
+                        <a href="#" class="card-link btn-main">Подробнее</a></div>
+
+                </div>
+            </div>
+            {{ end }}
 {{ end }}

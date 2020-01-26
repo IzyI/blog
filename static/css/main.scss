@@ -7,25 +7,80 @@ $font-an: 'Amatic SC', cursive;
 $font-oswald: 'Oswald', sans-serif;
 $transition-base: all .2s ease-in-out !default;
 
+$bg-olddark: #1d2024 !important;
+$main-link: #17a2b8 !important;
+$lite-white: #ffffff52;
+$color-text: #737f8a;
+$main-bg: #353b43;
+$light: white !important;
+.bg-olddark {
+  background-color: $bg-olddark;
+}
+
+.color-text{
+  color: $color-text !important;
+}
+.font-oswald {
+  font-family: $font-oswald;
+}
+
+.mt-4-5 {
+  margin-top: 2rem;
+}
+
+.font-oswald-3 {
+  font-family: $font-oswald;
+  font-weight: 300;
+}
+
+.btn-main {
+  border: 1px solid $lite-white;
+  padding: 7px 10px;
+  font-weight: 300;
+
+  &:hover {
+    border-color: $main-link;
+  }
+}
+
+.fs90 {
+  font-size: 90% !important;
+
+}
+
+.badge-my {
+  border: 1px solid $lite-white;
+  cursor: pointer;
+  font-weight: 300;
+
+  &:hover {
+    color: $main-link;
+    border-color: $main-link;
+  }
+}
 
 body {
   font-family: $font-opensans;
-  background: #353b43;
-  color: #737f8a;
+  color: $color-text;
+  background-color: $main-bg;
 
   a {
     color: white !important;
     transition: $transition-base;
 
     &:hover {
-      color: #57cbcc !important;
+      color: $main-link;
     }
   }
 }
 
-.font-oswald-3 {
-  font-family: $font-oswald;
-  font-weight: 300;
+.a-revers {
+  color: $main-link;
+  text-decoration: underline;
+
+  &:hover {
+    color: $light;
+  }
 }
 
 .link_top {
@@ -37,8 +92,8 @@ body {
 
 
     &:hover {
-      color: white;
-      border-color: rgba(255, 255, 255, 0.47);
+      color: $light;
+      border-color: $lite-white;
     }
   }
 
@@ -96,20 +151,20 @@ body {
 }
 
 .navbartop {
-  background-color: #1d2024 !important;
+  background-color: $bg-olddark;
   font-family: $font-oswald;
   font-weight: 300;
 
   #navbartop {
-    font-size: 1.5rem;
+    font-size: 2rem;
 
 
     a {
-      color: #737f8a !important;
+      color: $color-text;
       padding: 1rem 1rem 1.3rem 1rem;
 
       &:hover {
-        color: #57cbcc !important;
+        color: $main-link;
       }
 
 
@@ -117,13 +172,13 @@ body {
 
     .active {
       a {
-        color: #57cbcc !important;
+        color: $main-link;
       }
     }
   }
 
   .dropdown-menu {
-    background-color: #1d2024 !important;
+    background-color: $bg-olddark;
     font-size: 1.5rem;
 
     .dropdown-item {
@@ -131,5 +186,113 @@ body {
     }
 
 
+  }
+}
+
+#send_me {
+  input, textarea {
+
+
+    background-color: $main-bg;
+    border: 1px solid $main-bg;
+    color: $light;
+    font-size: 90%;
+
+
+    &:focus {
+      border: 1px solid $main-link;
+      box-shadow: 0 0 3px $main-link;
+    }
+  }
+
+
+  /****  floating-Lable style start ****/
+  .floating-label {
+    position: relative;
+  }
+
+  label {
+    color: $color-text;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+
+  .floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label,
+  .floating-select:focus ~ label, .floating-select:not([value=""]):valid ~ label {
+    top: -14px;
+    color: $main-link;
+    font-size: 1rem;
+  }
+
+  /* active state */
+  .floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+    width: 50%;
+  }
+
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+
+  /* active state */
+  .floating-input:focus ~ .highlight, .floating-select:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+  }
+
+
+}
+
+.lastul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-top: 1rem;
+
+    a {
+      color: $color-text !important;
+      text-decoration: underline;
+
+      &:hover {
+        color: $main-link;
+      }
+    }
+  }
+
+
+}
+
+.paginationmain {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      min-width: 23px;
+      padding: 0.2rem;
+      margin: 0.2rem;
+      background-color: $bg-olddark ;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 3px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
