@@ -1,0 +1,44 @@
+{{ define "title" }}{{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="card bg-olddark block-article mb-5">
+    <div class="card-body">
+        <h1 class="card-title font-oswald m-4"> {{ .Title }} </a></h1>
+
+
+        {{ $taxo := "tags" }} <!-- Use the plural form here -->
+        <div class="card-subtitle mt-5" id="{{ $taxo }}">
+            Тэги:
+            {{ range .Param $taxo }}
+            {{ $name := . }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name )) }}
+            <a class="badge badge-my" href="{{ .Permalink }}">{{ $name }}</a>
+            {{ end }}
+            {{ end }}
+
+        </div>
+
+        <div class="card-text mt-3"> {{ .Content }}</div>
+         <div class="card-subtitle d-flex justify-content-between align-content-center mt-5">
+              <div>
+                 {{ if .Params.linkhabr }}
+                <a href="{{ .Params.linkhabr }}" class="a-revers" target="_blank">ТОПИК на Хабре</a>
+                {{ end }}
+             </div>
+            <div class="text-muted ">
+                Автор: Di<br>
+                Дата: {{ .Date.Format "2.1.2006 " }} <br>
+
+            </div>
+
+        </div>
+        !!!!
+        {{ template "_internal/disqus.html" . }}
+    </div>
+</div>
+{{ end }}
+
+
+{{ define "leftsidebar" }}
+{{ partial "sidebar/leftsidebar_main" . }}
+{{ end }}

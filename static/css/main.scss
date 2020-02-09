@@ -13,15 +13,29 @@ $lite-white: #ffffff52;
 $color-text: #737f8a;
 $main-bg: #353b43;
 $light: white !important;
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main{
+    min-height: calc(100vh - 20px)
+}
 .bg-olddark {
   background-color: $bg-olddark;
 }
 
-.color-text{
+.color-text {
   color: $color-text !important;
 }
+
 .font-oswald {
   font-family: $font-oswald;
+}
+
+.font-an {
+  font-family: $font-an;
 }
 
 .mt-4-5 {
@@ -46,6 +60,11 @@ $light: white !important;
 .fs90 {
   font-size: 90% !important;
 
+}
+
+.badge-2w{
+  background-color: #1a59657d;
+  color: #e2e7ec;
 }
 
 .badge-my {
@@ -256,7 +275,7 @@ body {
   padding: 0;
 
   li {
-    display: inline-block;
+    display: block;
     margin-top: 1rem;
 
     a {
@@ -272,6 +291,7 @@ body {
 
 }
 
+
 .paginationmain {
   display: flex;
   justify-content: center;
@@ -283,16 +303,44 @@ body {
 
     a {
       display: block;
-      min-width: 23px;
+      min-width: 25px;
+      min-height: 25px;
       padding: 0.2rem;
       margin: 0.2rem;
-      background-color: $bg-olddark ;
+      background-color: $bg-olddark;
       text-align: center;
       font-weight: 700;
       border-radius: 3px;
+
       &:hover {
         text-decoration: none;
       }
     }
   }
+
+  .page-item.active .page-link {
+    border-color: $main-link;
+  }
+
+  .page-item.disabled .page-link {
+    border: 1px solid #2d629794;
+  }
+  .page-link {
+    border: 1px solid #2d629794;
+  }
+}
+
+.myphoto{
+  width: 100%;
+  display: block;
+}
+
+.mbli05{
+  li{
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+.sdf4rtf{
+  margin-bottom: 5rem;
 }

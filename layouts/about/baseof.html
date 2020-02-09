@@ -20,27 +20,8 @@
         {{ partial "header" . }}
     </div>
     <div class="container">
-
-        <div class="row">
-
-            <div class="col">
-                {{ block "main" . }}{{ end }}
-
-                {{ block "paginationmain" . }}{{ end }}
-
-            </div>
-            <div class="col-sm-12 col-md-4  col-lg-4 col-xl-4">
-                {{ block "leftsidebar" . }}{{ end }}
-
-
-            </div>
-
-        </div>
-
-
+             {{ block "main" . }}{{ end }}
     </div>
-
-    </div> <!-- /container -->
 </main>
 {{ partial "footer" . }}
 

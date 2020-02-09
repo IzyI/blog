@@ -1,8 +1,7 @@
 {{ define "title" }}{{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ $paginator := .Paginate ($pages.ByDate.Reverse) }}
+{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
 {{ range  $paginator.Pages}}
     {{ .Render "summary"}}
 {{ end }}
@@ -13,6 +12,7 @@
 {{ define "paginationmain" }}
 {{ partial "pagination/pagination" . }}
 {{ end }}
+
 
 {{ define "leftsidebar" }}
  {{ partial "sidebar/leftsidebar_main" . }}

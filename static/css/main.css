@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Oswald:200,300,400,500,600,700&display=swap&subset=cyrillic");
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+html, body {
+  height: 100%;
+  margin: 0; }
+
+main {
+  min-height: calc(100vh - 20px); }
+
 .bg-olddark {
   background-color: #1d2024 !important; }
 
@@ -8,6 +15,9 @@
 
 .font-oswald {
   font-family: "Oswald", sans-serif; }
+
+.font-an {
+  font-family: "Amatic SC", cursive; }
 
 .mt-4-5 {
   margin-top: 2rem; }
@@ -25,6 +35,10 @@
 
 .fs90 {
   font-size: 90% !important; }
+
+.badge-2w {
+  background-color: #1a59657d;
+  color: #e2e7ec; }
 
 .badge-my {
   border: 1px solid #ffffff52;
@@ -156,7 +170,7 @@ body {
   margin: 0;
   padding: 0; }
   .lastul li {
-    display: inline-block;
+    display: block;
     margin-top: 1rem; }
     .lastul li a {
       color: #737f8a !important;
@@ -173,7 +187,8 @@ body {
     display: inline-block; }
     .paginationmain li a {
       display: block;
-      min-width: 23px;
+      min-width: 25px;
+      min-height: 25px;
       padding: 0.2rem;
       margin: 0.2rem;
       background-color: #1d2024 !important;
@@ -182,3 +197,19 @@ body {
       border-radius: 3px; }
       .paginationmain li a:hover {
         text-decoration: none; }
+  .paginationmain .page-item.active .page-link {
+    border-color: #17a2b8 !important; }
+  .paginationmain .page-item.disabled .page-link {
+    border: 1px solid #2d629794; }
+  .paginationmain .page-link {
+    border: 1px solid #2d629794; }
+
+.myphoto {
+  width: 100%;
+  display: block; }
+
+.mbli05 li {
+  margin-bottom: 0.5rem !important; }
+
+.sdf4rtf {
+  margin-bottom: 5rem; }
