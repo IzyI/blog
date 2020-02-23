@@ -19,9 +19,10 @@ html, body {
   margin: 0;
 }
 
-main{
-    min-height: calc(100vh - 20px)
+main {
+  min-height: calc(100vh - 20px)
 }
+
 .bg-olddark {
   background-color: $bg-olddark;
 }
@@ -62,7 +63,7 @@ main{
 
 }
 
-.badge-2w{
+.badge-2w {
   background-color: #1a59657d;
   color: #e2e7ec;
 }
@@ -325,22 +326,32 @@ body {
   .page-item.disabled .page-link {
     border: 1px solid #2d629794;
   }
+
   .page-link {
     border: 1px solid #2d629794;
   }
 }
 
-.myphoto{
+.myphoto {
   width: 100%;
   display: block;
 }
 
-.mbli05{
-  li{
+.mbli05 {
+  li {
     margin-bottom: 0.5rem !important;
   }
 }
 
-.sdf4rtf{
+.sdf4rtf {
   margin-bottom: 5rem;
+}
+
+#sendmenumber {
+  margin-left: 10px;
+}
+
+.fwefwqe {
+  width: 5rem;
+  font-size: 1.3rem;
 }

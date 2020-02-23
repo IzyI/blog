@@ -1,14 +1,23 @@
-baseURL: 'http://example.org/'
 languageCode: 'en-us'
 title: 'Каперсы'
+description: "It Embedder @izy_di Кароч я тут поднакатал ты там глянь))"
 paginate: 6
-disqusShortname: yourdiscussshortname
+disqusShortname: http-capers-fun
+url: 'capers.fun'
+menu:
+  main:
+  - identifier: IT
+    name: IT
+    title: IT
+    url: /it/
+  - identifier: Embedder
+    name: Embedder
+    title: Embedder
+    url: /embedder/
+
 taxonomies:
   category: categories
   embedder: embedders
   tag: tags
 params:
-  count: ["1","2","3","4","5","6"]
-  ssss: "ssss"
-
-mainSections: ["it","embedder"]
+  mainSections: ["embedder", "it"]

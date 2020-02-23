@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"  
-date: {{ .Date }}  
+title: "Em3"  
+date: 2020-02-23T20:58:32+03:00  
 draft: true
 type: embedder
 linkhabr: false  
@@ -11,4 +11,4 @@ tags: [си]
 
 ---  
 ## Заголовок 
-{{ replace .Name "-" " " | title }}  embeder
+Em3  embeder

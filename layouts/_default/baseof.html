@@ -9,7 +9,8 @@
     <meta name="author" content="">
     <title>{{ block "title" . }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
     <!-- Bootstrap core CSS -->
-
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
     {{ partial "head/css" . }}
 
 </head>

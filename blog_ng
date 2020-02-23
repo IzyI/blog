@@ -1,0 +1,28 @@
+server {
+    server_name capers.fun 0.0.0.0;
+    listen 80;
+    access_log  /home/log_blog/access_nginx.log;
+    error_log  /home/log_blog/error_nginx.log;
+
+    location /css {
+        alias /home/public/css;
+    }
+    location /node_modules {
+        alias /home/public/node_modules;
+    }
+
+    location / {
+        root /home/public;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /botik {
+    proxy_pass http://localhost:8005;
+    proxy_set_header X-Forwarded-Host $server_name;
+    proxy_set_header X-Real-IP $remote_addr;
+    add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
+   }
+
+}
+
+

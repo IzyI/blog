@@ -1,0 +1,14 @@
+[Unit]
+Description=forwardTelegramBot
+After=network.target
+After=syslog.target
+
+[Service]
+WorkingDirectory=/home/api
+ExecStart=/home/api/forwardTelegramBot
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
