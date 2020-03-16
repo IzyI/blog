@@ -1,5 +1,5 @@
 server {
-    server_name capers.fun 0.0.0.0;
+    server_name capers.fun;
     listen 80;
     access_log  /home/log_blog/access_nginx.log;
     error_log  /home/log_blog/error_nginx.log;

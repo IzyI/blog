@@ -355,3 +355,34 @@ body {
   width: 5rem;
   font-size: 1.3rem;
 }
+
+.gist .blob-code-inner {
+  color: white !important;
+
+}
+.gist .highlight {
+
+    background: #272822 !important;
+    border: 0;
+
+}
+.gist .pl-s .pl-s1, .gist .pl-smi {
+    color: #ffed61 !important;
+}
+
+.gist .pl-pds, .gist .pl-s, .gist .pl-s .pl-pse .pl-s1, .gist .pl-sr, .gist .pl-sr .pl-cce, .gist .pl-sr .pl-sra, .gist .pl-sr .pl-sre {
+
+    color: #bfff2d !important;
+
+}
+
+.gist .gist-meta {
+
+    background-color: #353b43 !important;
+
+}
+p { text-indent: 15px; }
+
+.redic{
+  color: rgba(255, 0, 0, 0.44);
+}
