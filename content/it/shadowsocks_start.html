@@ -1,0 +1,136 @@
+---
+title: "Китайский SOCKS5 (shadowsocks)"
+date: 2020-04-09T18:05:01+03:00
+type: it
+draft: false
+linkhabr: false
+description: shadowsocks socks5 proxy go
+images:
+- default_open_graph.jpg
+tags: [proxy]
+---
+<p>
+    Писал я как то одну программу благодаря которой познакомился с очень удобной системой проксей под названием
+    Shadowsocks.
+</p>
+<p>
+    И был я очень удивлен его открытостью, скоростью , простотой работы и большим количеством языковых
+    реализация под всевозможные платформы. В дополнение к этому у него есть прекрасная
+    особенность. Shadowsocks уже несколько лет работает в Китае и не плохо показал себя в борьбе за
+    контент против великого китайского фаервола.
+
+</p>
+<p>
+    Для ознакомления с проектом можно пройти по ссылке: <a href="https://shadowsocks.org/en/index.html" target="_blank">ТыЦ</a>
+</p>
+<p>
+    Сейчас же мне резко понадобился прокси для моих мелочей. И я решил что это отличный повод рассказать как его
+    поднимать.
+</p>
+<br><br>
+<h3 class="text-center">Сервер</h3>
+<p>
+    Для начала нам нужен сервер забугорный с установленным go так как я выбрал реализацию
+    Outline-ss-server сервера shadowsocks:
+    <a href="https://github.com/Jigsaw-Code/outline-ss-server" target="_blank">ТыЦ</a> написанный на go.
+</p>
+<p>
+    Выбрал я его так как у него есть уже настроенная реализация сбора метрики <em>Prometheus</em> ну и почему бы нет.
+    Если же вы хотеть проще и быстрее то можете установить сишную реализацию shadowsocks-libev
+    <a href="https://github.com/Jigsaw-Code/shadowsocks-libev" target="_blank">ТыЦ</a>
+</p>
+<p>
+    После установки:
+</p>
+{{< highlight bash  >}}
+GO111MODULE=off go get github.com/shadowsocks/go-shadowsocks2 github.com/prometheus/prometheus/cmd/...
+{{< /highlight >}}
+<p>
+    Теперь нам надо собрать outline-ss-server . для этого надо пройти в папку где у вас установлен сервер в моем случае
+    это
+    <em class="redic">~/work/src/github.com/Jigsaw-code/outline-ss-server</em> и вызвать <em class="redic">go build
+    .</em>
+
+</p>
+<p>
+    После надо перейти в папку где у вас происходит сборка программы и сделать символьную ссылку
+    <em class="redic">ln -s /root/work/bin/outline-ss-server /usr/local/bin/</em>.
+</p>
+<p>
+    Также нам понадобится конфиг файл config.yml:
+</p>
+
+{{< highlight  yaml >}}
+keys:
+    - id: user-0
+      port: 8388
+      cipher: chacha20-ietf-poly1305
+      secret: 45hgwtregy353h
+
+{{< /highlight >}}
+<p>
+    Пишем service чтобы автоматически поднимался наш сервис:
+</p>
+{{< highlight service  >}}
+[Unit]
+Description=shadowsocks_run
+After=network.target
+After=syslog.target
+
+[Service]
+WorkingDirectory=/root/work/bin
+ExecStart=outline-ss-server -config /root/work/bin/config.yml
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+{{< /highlight >}}
+<p>
+    Затем надо вызвать <em class="redic">systemctl daemon-reload</em>
+    и можно запускать <em class="redic">service shadowsockrun start</em>.
+</p>
+<br><br>
+<h3 class="text-center">Клиент</h3>
+<p>
+   Теперь мы можем подключаться свой laptop через клиент. В качестве клиента я взял shadowsocks-libev.
+    Устанавливаем и правим конфиг
+    <em class="redic">sudo nano /etc/shadowsocks-libev/config.json </em>
+</p>
+{{< highlight json  >}}
+{
+"server": "IP_удаленного_сервера",
+"mode":"tcp_and_udp",
+"server_port":8388,
+"local_port":1081,
+"password":"45hgwtregy353h",
+"timeout":60,
+"method":"chacha20-ietf-poly1305"
+}
+
+{{< /highlight >}}
+<p>И вызываем ss-local. вывод должен быть такой:</p>
+{{< highlight bash  >}}
+2020-04-09 20:45:58 INFO: initializing ciphers... chacha20-ietf-poly1305
+2020-04-09 20:45:58 INFO: listening at 127.0.0.1:1081
+2020-04-09 20:45:58 INFO: udprelay enabled
+{{< /highlight >}}
+<p>
+   Туннель поднялся теперь мы можем проверить его нашим тестовым скриптом на python (не забываем установить pysocks)
+</p>
+{{< highlight python  >}}
+import requests
+
+ip = '127.0.0.1'
+port = "1081"
+auth = ""
+# auth = "vit:#gfhjkm666#@"
+proxies = {
+"http": f"socks5://{auth}{ip}:{port}",
+"https": f"socks5://{auth}{ip}:{port}",
+}
+print(requests.get("http://ifconfig.me").text)
+print(requests.get("http://ifconfig.me", proxies=proxies,timeout=50).text)
+{{< /highlight >}}
