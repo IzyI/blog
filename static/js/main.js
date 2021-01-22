@@ -15,7 +15,7 @@ $("#send_me_button").click(function (e) {
         "number": sendmenumber,
         "number_check": '12',
         "name_bot": name_bot,
-        "site_name": "Capers.fun"
+        "site_name": "kaper.su"
     };
     $.ajax({
         url: "/botik",

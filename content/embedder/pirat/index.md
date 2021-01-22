@@ -1,13 +1,12 @@
 ---
 title: "Sql получить непрерывную пооследовательных дат"
 date: 2020-04-08T19:40:28+03:00
-type: it
+type: embedder
 draft: false
 linkhabr: false
 description: SQL. MySQL POSTGRESQL, непрерывная последовательность дней
-images:
-- default_open_graph.jpg
-tags: [sql]
+image: default_open_graph.jpg
+tags: [си]
 ---
 <p>
     Как то раз мне задали интересную задачу.
@@ -18,7 +17,7 @@ tags: [sql]
     раз. <br>
     При этом нужно сделать фильтрацию по количеству посещений а также по количеству дней подряд.
 </p>
-
+<!--more-->
 <p>
     Есть вот такая таблица история в бд MariaDB
 </p>

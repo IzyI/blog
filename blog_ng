@@ -1,18 +1,18 @@
 server {
-    server_name capers.fun;
+    server_name kaper.su;
     listen 80;
-    access_log  /home/log_blog/access_nginx.log;
-    error_log  /home/log_blog/error_nginx.log;
+    access_log  /home/kaper/access_nginx.log;
+    error_log  /home/kaper/error_nginx.log;
 
     location /css {
-        alias /home/public/css;
+        alias /home/kaper/css;
     }
     location /node_modules {
-        alias /home/public/node_modules;
+        alias /home/kaper/node_modules;
     }
 
     location / {
-        root /home/public;
+        root /home/kaper;
         try_files $uri $uri/ /index.html;
     }
 

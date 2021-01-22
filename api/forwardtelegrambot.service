@@ -4,8 +4,8 @@ After=network.target
 After=syslog.target
 
 [Service]
-WorkingDirectory=/home/api
-ExecStart=/home/api/forwardTelegramBot
+WorkingDirectory=/home/forwardtelegrambot
+ExecStart=/home/forwardtelegrambot/forwardTelegramBot
 TimeoutStopSec=5
 PrivateTmp=true
 Restart=always

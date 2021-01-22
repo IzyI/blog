@@ -7,6 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="yandex-verification" content="17547496a32607a3" />
     <title>{{ block "title" . }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
     <!-- Bootstrap core CSS -->
     {{ template "_internal/opengraph.html" . }}
@@ -17,12 +18,12 @@
 
 <body>
 <main>
-    <div class="container mb-5">
+    <div class="container-fluid mb-5">
         {{ partial "header" . }}
     </div>
-    <div class="container">
+    <div class="container-fluid">
 
-        <div class="row">
+        <div class="row mr-lg-5 ml-lg-5  mr-xl-5 ml-xl-5">
 
             <div class="col-sm-12 col-md-8  col-lg-8 col-xl-8">
                 {{ block "main" . }}{{ end }}

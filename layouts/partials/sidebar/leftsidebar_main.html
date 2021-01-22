@@ -1,32 +1,28 @@
-
 <div class="card bg-olddark block-article mb-5">
     <div class="card-body">
         <h3 class="card-title font-oswald">Тэги: </h3>
         <div>
-    {{ range .Site.Taxonomies.tags }}
-            <a class="badge badge-my fs90 m-1" href="{{ .Page.Permalink }}">{{ .Page.Title }} <span class="badge badge-2w">{{ .Count }}</span></a>
-    {{ end }}
+
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <a class="badge badge-my fs90 m-1" href="/tags/{{ $name | urlize }}">{{ $name }} <span
+                            class="badge badge-2w">{{ .Count }}</span></a>
+            {{ end }}
 
 
         </div>
     </div>
 </div>
-
 <div class="card bg-olddark block-article mb-5">
     <div class="card-body">
         <h3 class="card-title font-oswald">Последние записи: </h3>
         <ul class="lastul">
             {{ $pages :=  site.RegularPages  }}
             {{ range first 7  ($pages) }}
-            <li><span class="badge badge-2w" >{{ .Type }}</span>  <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                <li><span class="badge badge-2w">{{ .Type }}</span> <a href="{{ .Permalink }}">{{ .Title }}</a></li>
             {{ end }}
         </ul>
-
-
-
     </div>
 </div>
-
 <div class="card bg-olddark block-article mb-5">
     <div class="card-body">
         <h3 class="card-title font-oswald">Написать мне:</span>
@@ -62,20 +58,18 @@
                     <label for="sendmetextarea">Краткая суть:</label>
                 </div>
                 <div class=" floating-label mt-4-5 fs90 d-flex  align-items-center">
-                    <span class="d-inline-block font-weight-bold fwefwqe" >10 + 2= </span>
+                    <span class="d-inline-block font-weight-bold fwefwqe">10 + 2= </span>
                     <input
                             type="text"
                             class="form-control floating-input floating-textarea"
                             placeholder=" "
                             id="sendmenumber"
-
                     >
                 </div>
                 <button id="send_me_button"
                         class="btn btn-outline-info btn-rounded btn-block  waves-effect z-depth-0 mt-4-5 fs90"
                         type="submit">ОТПРАВИТЬ
                 </button>
-
             </form>
         </div>
     </div>

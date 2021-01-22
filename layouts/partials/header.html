@@ -1,90 +1,100 @@
-<div class="align-items-end d-flex justify-content-between ">
-    <div class=" d-sm-flex d-none font-oswald-3">
-        <a class="d-inline-block text-decoration-none p-2" href="/"><span class="glyphicon glyphicon-home"></span>
-            Главная </a>
-        <a class="d-inline-block text-decoration-none p-2" href="/about"><span
-                class="glyphicon glyphicon-paperclip"></span> Обо мне </a>
-    </div>
-
-    <div class=" d-flex link_top">
-        <a class="p-2 blocl_icon" href="https://github.com/IzyI" target="_blank">
-            <div class="myicon githab"></div>
-        </a>
-        <!--        <a class="p-2 blocl_icon" href="/#">-->
-        <!--            <div class="myicon linkedin"></div>-->
-        <!--        </a>-->
-        <!--        <a class="p-2 blocl_icon" href="/#">-->
-        <!--            <div class="myicon youtube"></div>-->
-        <!--        </a>-->
-        <a class="p-2 blocl_icon" href="https://t.me/izy_di" target="_blank">
-            <div class="myicon telegram"></div>
-        </a>
-        <a class="p-2 blocl_icon" href="https://habr.com/ru/users/izy/" target="_blank">
-            <div class="myicon habr"> Habr</div>
-        </a>
-    </div>
-</div>
-<div class="row">
+<div class="row  mr-lg-5 ml-lg-5  mr-xl-5 ml-xl-5 ">
     <div class="col">
-        <div class="logo">
-            <a href="/" style="color: red; font-size:4rem ; font-weight:600; padding: 1rem;">Каперсы</a>
+        <div class="align-items-end d-flex justify-content-between">
+            <div class=" d-sm-flex d-none font-oswald-3">
+                <a class="d-inline-block text-decoration-none p-2" href="/"><span
+                            class="glyphicon glyphicon-home"></span>
+                    Главная </a>
+                <a class="d-inline-block text-decoration-none p-2" href="/about"><span
+                            class="glyphicon glyphicon-paperclip"></span> Обо мне </a>
+            </div>
+
+            <div class=" d-flex link_top">
+                <a class="p-2 blocl_icon" href="https://github.com/IzyI" target="_blank">
+                    <div class="myicon githab"></div>
+                </a>
+                <!--        <a class="p-2 blocl_icon" href="/#">-->
+                <!--            <div class="myicon linkedin"></div>-->
+                <!--        </a>-->
+                <!--        <a class="p-2 blocl_icon" href="/#">-->
+                <!--            <div class="myicon youtube"></div>-->
+                <!--        </a>-->
+                <a class="p-2 blocl_icon" href="https://t.me/izy_di" target="_blank">
+                    <div class="myicon telegram"></div>
+                </a>
+                <a class="p-2 blocl_icon" href="https://habr.com/ru/users/izy/" target="_blank">
+                    <div class="myicon habr"> Habr</div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
-<nav class="navbar  navbar-expand-sm navbar-dark  navbartop">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartop"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbartop">
-        <ul class="navbar-nav mr-auto">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-            <li class='nav-item {{if (in  $currentPage.Permalink  .URL ) }} active{{end}} '>
-                <a class='nav-link '
-                   href='{{ .URL }}' title='{{ .Title }}'>{{ .Name }}</a>
-            </li>
-            {{ end }}
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Проекты
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<!--                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#zaglushka">Корзина</a>-->
-<!--                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#zaglushka">Магазины</a>-->
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://github.com/IzyI" target="_blank">GitHab</a>
-                </div>
-            </li>
-
-
-        </ul>
-
+<div class="row mt-5 mr-lg-5 ml-lg-5  mr-xl-5 ml-xl-5">
+    <div class="col">
+        <div class="logo">
+            <a href="/" style="color: red; font-size:4rem ; font-weight:600; padding: 1rem;">Капер</a>
+        </div>
     </div>
-</nav>
-
-<div>
-
 </div>
-<!-- Modal -->
-<div class="modal fade" id="zaglushka" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Проект</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="row  mr-lg-5 ml-lg-5  mr-xl-5 ml-xl-5 ">
+    <div class="col">
+        <nav class="navbar  navbar-expand-sm navbar-dark  navbartop">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartop"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbartop">
+                <ul class="navbar-nav mr-auto">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                        <li class='nav-item {{if (in  $currentPage.Permalink  .URL ) }} active{{end}} '>
+                            <a class='nav-link '
+                               href='{{ .URL }}' title='{{ .Title }}'>{{ .Name }}</a>
+                        </li>
+                    {{ end }}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Проекты
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!--                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#zaglushka">Корзина</a>-->
+                            <!--                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#zaglushka">Магазины</a>-->
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://github.com/IzyI" target="_blank">GitHab</a>
+                        </div>
+                    </li>
+
+
+                </ul>
+
             </div>
-            <div class="modal-body">
-                На данном этапе проект находится в разработке
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </nav>
+
+        <div>
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="zaglushka" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Проект</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        На данном этапе проект находится в разработке
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

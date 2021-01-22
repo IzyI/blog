@@ -3,7 +3,7 @@ title: 'Каперсы'
 description: "Кароч я тут поднакатал ты там глянь)) It Embedder @izy_di"
 paginate: 6
 disqusShortname: http-capers-fun
-url: 'capers.fun'
+url: 'kapers.su'
 menu:
   main:
   - identifier: IT
@@ -17,7 +17,6 @@ menu:
 
 taxonomies:
   category: categories
-  embedder: embedders
   tag: tags
 params:
   mainSections: ["embedder", "it"]
